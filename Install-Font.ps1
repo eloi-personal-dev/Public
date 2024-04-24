@@ -1,8 +1,19 @@
-# File:     Install-Font.ps1
-# Date:     04/23/2024
-# Version:  1.0.8
+<#
+.SYNOPSIS
+	This script installs a custom Windows Font. (Does not need admin rights)
+.DESCRIPTION
+    Script to install a custom Windows 10/11 Font by file location or url.
+.SCRIPT
+    Install-Font.ps1
+.AUTHOR
+    ehrynkiw@it-ed.com
+.INFO
+    04/23/2024
+    Version:  1.0.3  
+.EXAMPLE
+    Usage: Usage: .\Install-Font.ps1 [-FontUrl <url>] [-FontName <name>] [-Install] [-Help]
+#>
 
-# Script to Install Windows 10/11 Font
 
 param (
     [string]$FontUrl = "",
