@@ -52,7 +52,10 @@ function Show-Help {
 # Start transcript
 Start-Transcript -Path "$Destination\Log\Font-Install.log"
 
-if (-not $Url) {
+if ($Help) {
+    Show-Help
+}
+elseif (-not $Url) {
     # Install all fonts in the destination folder with .ttf or .otf extensions
     $fonts = Get-ChildItem -Path $Destination -Include '*.ttf', '*.otf'
     foreach ($font in $fonts) {
