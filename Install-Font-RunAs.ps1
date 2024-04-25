@@ -1,28 +1,27 @@
 <#
 .SYNOPSIS
-    This script installs all Fonts located in the specified destination path or Url. (Needs Admin rights)
+    Ce script installe toutes les polices situées dans le chemin de destination spécifié ou à partir d'une URL. (Nécessite des droits d'administrateur)
 .DESCRIPTION
-    Script to install all fonts with .ttf or .otf extensions found in the specified directory.
-    URL can be used to download a font file.
+    Script pour installer toutes les polices avec les extensions .ttf ou .otf trouvées dans le répertoire spécifié.
+    Une URL peut être utilisée pour télécharger un fichier de police.
 
-    Note: 
-    By default, if no switch is provided, the script will install all fonts in the destination folder.
-    User must restart the application to see the changes or logoff/logon.
-    
+    Remarque :
+    Par défaut, si aucun switch n'est fourni, le script installera toutes les polices dans le dossier de destination.
+    L'utilisateur doit redémarrer l'application pour voir les modifications ou se déconnecter/reconnecter.
 .NOTES
-    Script name: Install-Font-RunAs.ps1
-    Author: ehrynkiw@it-ed.com
-    Date: 04/25/2024
-    Version: 1.1.3
+    Nom du script : Install-Font-RunAs.ps1
+    Auteur : ehrynkiw@it-ed.com
+    Date : 25/04/2024
+    Version : 1.1.3
 .EXAMPLE
-    Usage: .\Install-Font-RunAs.ps1 [-Url <url>] [-Destination <path>] [-Help]
+    Utilisation : .\Install-Font-RunAs.ps1 [-Url <url>] [-Destination <path>] [-Help]
 
-    Optional parameters:
+    Paramètres facultatifs :
     
-    -Destination <path> : The path to the font files to install. (defaults to C:\ited\Fonts)
-    -Url <url> : The URL to download the font from.    
+    -Destination <path> : Le chemin vers les fichiers de police à installer. (par défaut : C:\ited\Fonts)
+    -Url <url> : L'URL pour télécharger la police.
 
-# Requirements - Administrator Rights
+# Requirements - Droits d'administrateur
 #>
 
 param (
