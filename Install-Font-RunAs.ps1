@@ -34,7 +34,7 @@ $fontFolder = 'C:\Windows\Fonts'
 
 function Show-Help {
     Write-Host ""
-    Write-Host "Usage: .\Install-Font-RunAs.ps1 [-FontUrl <url>] [-FontName <name>] [-Install] [-Help]"
+    Write-Host "Usage: .\Install-Font-RunAs.ps1 [-Url <url>] [-Destination <path>] [-Help]"
     Write-Host ""
     Write-Host "Parameters:"
     Write-Host ""
@@ -44,7 +44,7 @@ function Show-Help {
     Write-Host ""
     Write-Host "Examples:"
     Write-Host ""
-    Write-Host "  .\Install-Font-RunAs.ps1 -FontUrl 'https://example.com/font.ttf' -Install"
+    Write-Host "  .\Install-Font-RunAs.ps1 -Url 'https://example.com/font.ttf' "
     Write-Host "     Installs the font from the specified URL."
     Write-Host ""
 }
