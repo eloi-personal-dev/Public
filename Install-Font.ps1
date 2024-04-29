@@ -51,14 +51,17 @@ $TempFolder = "C:\Windows\Temp\Fonts"
 $SystemFontsPath = "C:\Windows\Fonts"
 $UserFontsPath = "$env:LOCALAPPDATA\Microsoft\Windows\Fonts"
 
+# Start transcript
+Start-Transcript -Path "C:\ited\Fonts\Log\Font-Install.log"
+
 if ($Help) {
     Show-Help
     exit
 }
 
 if ($Install) {
-    # Start transcript
-    Start-Transcript -Path "C:\ited\Fonts\Log\Font-Install.log"
+
+
     if (-not $FontUrl) {
         Write-Error "Font URL is missing. Please provide a valid URL using -FontUrl parameter."
         exit 1
@@ -87,16 +90,17 @@ if ($Install) {
     $Destination = $ShellApp.Namespace(0x14)
     $Destination.CopyHere($FontDestination, 0x10)
 
-    Write-Host "Font installed successfully: $FontFileName"
-    
-    # End transcript
-    Stop-Transcript
-
-
+    Write-Host ""
+    Write-Host "$FontFileName Font installed successfully."
+    Write-Host ""
+   
     # Delete temporary copy of font
     #Remove-Item $FontDestination -Force
 
     exit
 }
+
+# End transcript
+Stop-Transcript
 
 Show-Help
