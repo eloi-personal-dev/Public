@@ -57,6 +57,8 @@ if ($Help) {
 }
 
 if ($Install) {
+    # Start transcript
+    Start-Transcript -Path "C:\ited\Fonts\Log\Font-Install.log"
     if (-not $FontUrl) {
         Write-Error "Font URL is missing. Please provide a valid URL using -FontUrl parameter."
         exit 1
@@ -86,9 +88,13 @@ if ($Install) {
     $Destination.CopyHere($FontDestination, 0x10)
 
     Write-Host "Font installed successfully: $FontFileName"
+    
+    # End transcript
+    Stop-Transcript
+
 
     # Delete temporary copy of font
-    Remove-Item $FontDestination -Force
+    #Remove-Item $FontDestination -Force
 
     exit
 }
